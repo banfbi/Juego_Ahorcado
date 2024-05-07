@@ -1,12 +1,20 @@
 /*=======================================================
 Copyright (c) 2024. Alejandro Alberto Jiménez Brundin
 =======================================================*/
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(../../assets/img/pizarra.avif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
 #titulo {
     align-items: center;
     margin: 0;
     margin-left: 500px;
     margin-top: 25px;
-    margin-bottom: 50px;
     height: auto;
     background: transparent;
     padding: 0;
@@ -42,6 +50,193 @@ Copyright (c) 2024. Alejandro Alberto Jiménez Brundin
   .button:hover .hover-text {
     width: 100%;
     filter: drop-shadow(0 0 23px var(--animation-color))
+  }
+
+  /*#resolver {
+    padding: 15px 25px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+  }
+
+  #resolver:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+
+  #resolver:active {
+    transform: translateY(-1px);
+  }*/
+
+  #reset, #botonPista {
+    padding: 15px 25px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  #reset:hover, #botonPista:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+  
+  #reset:active, #botonPista:active {
+    transform: translateY(-1px);
+  }
+
+  .hecho {
+    color: rgb(159, 159, 159);
+    font-size: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  .main-container {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  h1#final-msg {
+    text-align: center;
+    color: crimson;
+    transition: all .5s ease;
+    transform: scale(0);
+    min-height: 50px;
+    margin-bottom: 0;
+  }
+  
+  .zoom-in {
+    transform: scale(1) !important;
+  }
+  
+  #aciertos {
+    text-align: center;
+    min-height: 24px;
+    transform: scale(0);
+  }
+  
+  .acierto {
+    animation: zoomInOut 1s ease;
+  }
+  
+  .red {
+    color: red;
+  }
+  
+  .green {
+    color: green;
+  }
+  
+  @keyframes zoomInOut {
+    0% { transform: scale(0); }
+    50% { transform: scale(1); }
+    70% { transform: scale(1); }
+    100% { transform: scale(0); }
+  }
+  
+  h2.palabra {
+    margin: 0 auto 25px ;
+    margin-top: 180px;
+    text-align: center;
+    color: rgb(103, 255, 151);
+    text-transform: uppercase;
+    letter-spacing: 6px;
+  }
+  .flex-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px auto; 
+    position: relative;
+  }
+  
+  .palabraPoner {
+    width: 200px;
+    height: 50px;
+    margin-top: 200px;
+    border: 0;
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(157, 157, 157, 0);
+    color: whitesmoke;
+    font-size: 30px;
+  }
+  
+  
+  .col {
+    width: 50%;
+    text-align: center;
+  }
+  
+  #turnos h3 {
+    margin: auto;
+    color: whitesmoke;
+    margin-top: 10px;
+  }
+  
+  h3 span {
+     color: orangered;
+  }
+  
+  .letter:disabled {
+    color:rgba(255, 0, 0, 0.5);
+  }
+  
+  picture {
+    position: relative;
+    margin-top: 200px;
+    margin-bottom: 100px;
+  }
+  
+  picture img {
+    position: absolute;
+    top: -203px;
+    left: -205px;
+    height: 225px;
+  }
+  
+  #imagen5, #imagen4, #imagen3,
+  #imagen2, #imagen1, #imagen0 {
+    opacity: 0;
+    transition: opacity .3s ease;
+  } 
+
+  #pistaHueco {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: yellow;
   }
 
 /*=======================================================
