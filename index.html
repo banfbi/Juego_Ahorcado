@@ -9,7 +9,8 @@
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
-        <button class="button" id="titulo" data-text="Awesome" onclick="reiniciar()">
+        <button class="button" id="titulo" data-text="Awesome"
+            onclick="reiniciar()">
             <span class="actual-text">&nbsp;Ahorcado&nbsp;</span>
             <span aria-hidden="true"
                 class="hover-text">&nbsp;Ahorcado&nbsp;</span>
@@ -20,25 +21,23 @@
             <h3 id="aciertos"></h3>
             <div class="flex-row no-wrap">
                 <!--<button id="resolver">Resolver</button>-->
-                <input type="text" class="palabraPoner">
                 <h2 class="palabra" id="palabra"></h2>
-                <picture>
-                    <img src="assets/img/ahorcado_0.png" alt id="imagen6">
-                    <img src="assets/img/ahorcado_5.png" alt id="imagen5">
-                    <img src="assets/img/ahorcado_4.png" alt id="imagen4">
-                    <img src="assets/img/ahorcado_3.png" alt id="imagen3">
-                    <img src="assets/img/ahorcado_2.png" alt id="imagen2">
-                    <img src="assets/img/ahorcado_1.png" alt id="imagen1">
-                    <img src="assets/img/ahorcado_0.png" alt id="imagen0">
+                <picture id="imgAhorcado">
+                    <img src="assets/img/ahorcado_6.png" id="imagen6">
                 </picture>
+            </div>
+            <div class="container-fluid" id="botonesLetras">
             </div>
             <div class="flex-row" id="turnos">
                 <div class="col">
-                    <h3>Intentos restantes: <span id="intentosRestantes">5</span></h3>
+                    <h3>Intentos restantes: <span
+                            id="intentosRestantes">6</span></h3>
                 </div>
                 <div class="col">
-                    <button onclick="reiniciar()" id="reset">Elegir otra palabra</button>
-                    <button onclick="pista()" id="botonPista">Dame una pista!</button>
+                    <button onclick="reiniciar()" id="reset">Elegir otra
+                        palabra</button>
+                    <button onclick="pista()" id="botonPista">Dame una
+                        pista!</button>
                     <span id="pistaHueco"></span>
                 </div>
             </div>
