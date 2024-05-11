@@ -52,34 +52,6 @@ body {
     filter: drop-shadow(0 0 23px var(--animation-color))
   }
 
-  /*#resolver {
-    padding: 15px 25px;
-    font-size: 12px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    font-weight: 500;
-    color: #000;
-    background-color: #fff;
-    border: none;
-    border-radius: 45px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
-    outline: none;
-  }
-
-  #resolver:hover {
-    background-color: #23c483;
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-    color: #fff;
-    transform: translateY(-7px);
-  }
-
-  #resolver:active {
-    transform: translateY(-1px);
-  }*/
-
   #reset, #botonPista {
     padding: 15px 25px;
     font-size: 12px;
@@ -124,20 +96,7 @@ body {
     max-width: 800px;
     margin: auto;
   }
-  
-  h1#final-msg {
-    text-align: center;
-    color: crimson;
-    transition: all .5s ease;
-    transform: scale(0);
-    min-height: 50px;
-    margin-bottom: 0;
-  }
-  
-  .zoom-in {
-    transform: scale(1) !important;
-  }
-  
+
   #aciertos {
     text-align: center;
     min-height: 24px;
@@ -154,13 +113,6 @@ body {
   
   .green {
     color: green;
-  }
-  
-  @keyframes zoomInOut {
-    0% { transform: scale(0); }
-    50% { transform: scale(1); }
-    70% { transform: scale(1); }
-    100% { transform: scale(0); }
   }
   
   h2.palabra {
@@ -189,7 +141,7 @@ body {
     width: 50%;
     text-align: center;
   }
-  
+
   #turnos h3 {
     margin: auto;
     color: whitesmoke;
@@ -229,7 +181,6 @@ body {
     font-weight: bold;
     color: yellow;
   }
-
 /*=======================================================
 Copyright (c) 2024. Alejandro Alberto Jiménez Brundin
 =======================================================*/

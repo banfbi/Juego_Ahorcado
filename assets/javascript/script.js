@@ -65,18 +65,84 @@ function reiniciar() {
 function generarLetras() {
   let numero = 1;
   let texto = "<div class='row'> <div class='col'> <div class='flex-row'>";
-  for (let i = 'A'.charCodeAt(0); i <= 'J'.charCodeAt(0); i++) {
-    texto += "<button class='letra' id='letra"+ String.fromCharCode(i) +"' onclick='jugar(\""+ String.fromCharCode(i) +"\")'>"+ String.fromCharCode(i) +"</button>";
+  for (let i = "A".charCodeAt(0); i <= "J".charCodeAt(0); i++) {
+    texto +=
+      "<button class='letra' id='letra" +
+      String.fromCharCode(i) +
+      "' onclick='jugar(\"" +
+      String.fromCharCode(i) +
+      "\")'>" +
+      String.fromCharCode(i) +
+      "</button>";
     numero++;
   }
   texto += "</div> <div class='flex-row'>";
-  for (let i = 'K'.charCodeAt(0); i <= 'T'.charCodeAt(0); i++) {
-    texto += "<button class='letra' id='letra"+ String.fromCharCode(i) +"' onclick='jugar(\""+ String.fromCharCode(i) +"\")'>"+ String.fromCharCode(i) +"</button>";
+  for (let i = "K".charCodeAt(0); i <= "T".charCodeAt(0); i++) {
+    texto +=
+      "<button class='letra' id='letra" +
+      String.fromCharCode(i) +
+      "' onclick='jugar(\"" +
+      String.fromCharCode(i) +
+      "\")'>" +
+      String.fromCharCode(i) +
+      "</button>";
     numero++;
   }
   texto += "</div> <div class='flex-row'>";
-  for (let i = 'U'.charCodeAt(0); i <= 'Z'.charCodeAt(0); i++) {
-    texto += "<button class='letra' id='letra"+ String.fromCharCode(i) +"' onclick='jugar(\""+ String.fromCharCode(i) +"\")'>"+ String.fromCharCode(i) +"</button>";
+  for (let i = "U".charCodeAt(0); i <= "Z".charCodeAt(0); i++) {
+    texto +=
+      "<button class='letra' id='letra" +
+      String.fromCharCode(i) +
+      "' onclick='jugar(\"" +
+      String.fromCharCode(i) +
+      "\")'>" +
+      String.fromCharCode(i) +
+      "</button>";
+    numero++;
+  }
+  texto += "</div> </div> </div>";
+  document.getElementById("botonesLetras").innerHTML = texto;
+}
+
+function generarLetrasDisabled() {
+  let numero = 1;
+  let texto = "<div class='row'> <div class='col'> <div class='flex-row'>";
+  for (let i = "A".charCodeAt(0); i <= "J".charCodeAt(0); i++) {
+    texto +=
+      "<button class='letra' id='letra" +
+      String.fromCharCode(i) +
+      "' onclick='jugar(\"" +
+      String.fromCharCode(i) +
+      "\")' disabled>" +
+      String.fromCharCode(i) +
+      "</button>";
+      document.getElementById("letra" + String.fromCharCode(i)).classList.add("red");
+    numero++;
+  }
+  texto += "</div> <div class='flex-row'>";
+  for (let i = "K".charCodeAt(0); i <= "T".charCodeAt(0); i++) {
+    texto +=
+      "<button class='letra' id='letra" +
+      String.fromCharCode(i) +
+      "' onclick='jugar(\"" +
+      String.fromCharCode(i) +
+      "\")'disabled>" +
+      String.fromCharCode(i) +
+      "</button>";
+      document.getElementById("letra" + String.fromCharCode(i)).classList.add("red");
+    numero++;
+  }
+  texto += "</div> <div class='flex-row'>";
+  for (let i = "U".charCodeAt(0); i <= "Z".charCodeAt(0); i++) {
+    texto +=
+      "<button class='letra' id='letra" +
+      String.fromCharCode(i) +
+      "' onclick='jugar(\"" +
+      String.fromCharCode(i) +
+      "\")'disabled>" +
+      String.fromCharCode(i) +
+      "</button>";
+      document.getElementById("letra" + String.fromCharCode(i)).classList.add("red");
     numero++;
   }
   texto += "</div> </div> </div>";
@@ -84,30 +150,36 @@ function generarLetras() {
 }
 
 function jugar(valor) {
-  document.getElementById("letra"+ valor).disabled = true;
+  document.getElementById("letra" + valor).disabled = true;
   let comprobar = false;
   for (let index = 0; index < palabra.length; index++) {
-    if (valor == palabra.charCodeAt(index)) {
+    if (valor == String.fromCharCode(palabra.charCodeAt(index))) {
       comprobar = true;
       break;
     }
   }
   if (comprobar) {
     for (let index = 0; index < palabra.length; index++) {
-      if (valor == palabra.charCodeAt(index)) {
+      if (valor == String.fromCharCode(palabra.charCodeAt(index))) {
         oculta[index] = palabra.charAt(index);
         hueco.innerHTML = oculta.join("");
-        document.getElementById("letra"+ valor).classList.add("green");
+        document.getElementById("letra" + valor).classList.add("green");
+        if (oculta.indexOf("_") == -1) {
+          alert("Ganaste! 😀 La palabra era: " + palabra);
+          generarLetrasDisabled();
+        }
       }
     }
+  } else if (cont == 0) {
+    alert("Perdiste! ☹️ La palabra era: " + palabra);
+    generarLetrasDisabled();
   } else {
     cont--;
     document.getElementById("imagen6").src = "assets/img/ahorcado_" + cont + ".png";
     document.getElementById("intentosRestantes").innerHTML = cont;
-    document.getElementById("letra"+ valor).classList.add("red");
+    document.getElementById("letra" + valor).classList.add("red");
   }
 }
-
 /*=======================================================
 Copyright (c) 2024. Alejandro Alberto Jiménez Brundin
 =======================================================*/
